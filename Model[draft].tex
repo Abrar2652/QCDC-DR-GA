@@ -1,0 +1,784 @@
+
+% Colors for the hyperref package
+\definecolor{urlcolor}{rgb}{0,.145,.698}
+\definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+\definecolor{citecolor}{rgb}{.12,.54,.11}
+
+% ANSI colors
+\definecolor{ansi-black}{HTML}{3E424D}
+\definecolor{ansi-black-intense}{HTML}{282C36}
+\definecolor{ansi-red}{HTML}{E75C58}
+\definecolor{ansi-red-intense}{HTML}{B22B31}
+\definecolor{ansi-green}{HTML}{00A250}
+\definecolor{ansi-green-intense}{HTML}{007427}
+\definecolor{ansi-yellow}{HTML}{DDB62B}
+\definecolor{ansi-yellow-intense}{HTML}{B27D12}
+\definecolor{ansi-blue}{HTML}{208FFB}
+\definecolor{ansi-blue-intense}{HTML}{0065CA}
+\definecolor{ansi-magenta}{HTML}{D160C4}
+\definecolor{ansi-magenta-intense}{HTML}{A03196}
+\definecolor{ansi-cyan}{HTML}{60C6C8}
+\definecolor{ansi-cyan-intense}{HTML}{258F8F}
+\definecolor{ansi-white}{HTML}{C5C1B4}
+\definecolor{ansi-white-intense}{HTML}{A1A6B2}
+\definecolor{ansi-default-inverse-fg}{HTML}{FFFFFF}
+\definecolor{ansi-default-inverse-bg}{HTML}{000000}
+
+% common color for the border for error outputs.
+\definecolor{outerrorbackground}{HTML}{FFDFDF}
+
+% commands and environments needed by pandoc snippets
+% extracted from the output of `pandoc -s`
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+
+% Additional commands for more recent versions of Pandoc
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+
+
+% Define a nice break command that doesn't care if a line doesn't already
+% exist.
+\def\br{\hspace*{\fill} \\* }
+% Math Jax compatibility definitions
+\def\gt{>}
+\def\lt{<}
+\let\Oldtex\TeX
+\let\Oldlatex\LaTeX
+\renewcommand{\TeX}{\textrm{\Oldtex}}
+\renewcommand{\LaTeX}{\textrm{\Oldlatex}}
+% Document parameters
+% Document title
+\title{Model[draft]}
+
+
+
+
+
+
+
+% Pygments definitions
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+\let\PY@ul=\relax \let\PY@tc=\relax%
+\let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+\PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+\PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\@namedef{PY@tok@w}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\@namedef{PY@tok@c}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cp}{\def\PY@tc##1{\textcolor[rgb]{0.61,0.40,0.00}{##1}}}
+\@namedef{PY@tok@k}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kt}{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\@namedef{PY@tok@o}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ow}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@nb}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nf}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@nn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@ne}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.80,0.25,0.22}{##1}}}
+\@namedef{PY@tok@nv}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@no}{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\@namedef{PY@tok@nl}{\def\PY@tc##1{\textcolor[rgb]{0.46,0.46,0.00}{##1}}}
+\@namedef{PY@tok@ni}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@na}{\def\PY@tc##1{\textcolor[rgb]{0.41,0.47,0.13}{##1}}}
+\@namedef{PY@tok@nt}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@nd}{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\@namedef{PY@tok@s}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sd}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@si}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@se}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.36,0.12}{##1}}}
+\@namedef{PY@tok@sr}{\def\PY@tc##1{\textcolor[rgb]{0.64,0.35,0.47}{##1}}}
+\@namedef{PY@tok@ss}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sx}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@m}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@gh}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gu}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\@namedef{PY@tok@gd}{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\@namedef{PY@tok@gi}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.52,0.00}{##1}}}
+\@namedef{PY@tok@gr}{\def\PY@tc##1{\textcolor[rgb]{0.89,0.00,0.00}{##1}}}
+\@namedef{PY@tok@ge}{\let\PY@it=\textit}
+\@namedef{PY@tok@gs}{\let\PY@bf=\textbf}
+\@namedef{PY@tok@ges}{\let\PY@bf=\textbf\let\PY@it=\textit}
+\@namedef{PY@tok@gp}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\@namedef{PY@tok@go}{\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
+\@namedef{PY@tok@gt}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\@namedef{PY@tok@err}{\def\PY@bc##1{{\setlength{\fboxsep}{\string -\fboxrule}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}}
+\@namedef{PY@tok@kc}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kd}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kn}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@kr}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@bp}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\@namedef{PY@tok@fm}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\@namedef{PY@tok@vc}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vg}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vi}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@vm}{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\@namedef{PY@tok@sa}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sb}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sc}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@dl}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s2}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@sh}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@s1}{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\@namedef{PY@tok@mb}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mf}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mh}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mi}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@il}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@mo}{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\@namedef{PY@tok@ch}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cm}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cpf}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@c1}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+\@namedef{PY@tok@cs}{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.24,0.48,0.48}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+% For linebreaks inside Verbatim environment from package fancyvrb.
+\makeatletter
+    \newbox\Wrappedcontinuationbox
+    \newbox\Wrappedvisiblespacebox
+    \newcommand*\Wrappedvisiblespace {\textcolor{red}{\textvisiblespace}}
+    \newcommand*\Wrappedcontinuationsymbol {\textcolor{red}{\llap{\tiny$\m@th\hookrightarrow$}}}
+    \newcommand*\Wrappedcontinuationindent {3ex }
+    \newcommand*\Wrappedafterbreak {\kern\Wrappedcontinuationindent\copy\Wrappedcontinuationbox}
+    % Take advantage of the already applied Pygments mark-up to insert
+    % potential linebreaks for TeX processing.
+    %        {, <, #, %, $, ' and ": go to next line.
+    %        _, }, ^, &, >, - and ~: stay at end of broken line.
+    % Use of \textquotesingle for straight quote.
+    \newcommand*\Wrappedbreaksatspecials {%
+        \def\PYGZus{\discretionary{\char`\_}{\Wrappedafterbreak}{\char`\_}}%
+        \def\PYGZob{\discretionary{}{\Wrappedafterbreak\char`\{}{\char`\{}}%
+        \def\PYGZcb{\discretionary{\char`\}}{\Wrappedafterbreak}{\char`\}}}%
+        \def\PYGZca{\discretionary{\char`\^}{\Wrappedafterbreak}{\char`\^}}%
+        \def\PYGZam{\discretionary{\char`\&}{\Wrappedafterbreak}{\char`\&}}%
+        \def\PYGZlt{\discretionary{}{\Wrappedafterbreak\char`\<}{\char`\<}}%
+        \def\PYGZgt{\discretionary{\char`\>}{\Wrappedafterbreak}{\char`\>}}%
+        \def\PYGZsh{\discretionary{}{\Wrappedafterbreak\char`\#}{\char`\#}}%
+        \def\PYGZpc{\discretionary{}{\Wrappedafterbreak\char`\%}{\char`\%}}%
+        \def\PYGZdl{\discretionary{}{\Wrappedafterbreak\char`\$}{\char`\$}}%
+        \def\PYGZhy{\discretionary{\char`\-}{\Wrappedafterbreak}{\char`\-}}%
+        \def\PYGZsq{\discretionary{}{\Wrappedafterbreak\textquotesingle}{\textquotesingle}}%
+        \def\PYGZdq{\discretionary{}{\Wrappedafterbreak\char`\"}{\char`\"}}%
+        \def\PYGZti{\discretionary{\char`\~}{\Wrappedafterbreak}{\char`\~}}%
+    }
+    % Some characters . , ; ? ! / are not pygmentized.
+    % This macro makes them "active" and they will insert potential linebreaks
+    \newcommand*\Wrappedbreaksatpunct {%
+        \lccode`\~`\.\lowercase{\def~}{\discretionary{\hbox{\char`\.}}{\Wrappedafterbreak}{\hbox{\char`\.}}}%
+        \lccode`\~`\,\lowercase{\def~}{\discretionary{\hbox{\char`\,}}{\Wrappedafterbreak}{\hbox{\char`\,}}}%
+        \lccode`\~`\;\lowercase{\def~}{\discretionary{\hbox{\char`\;}}{\Wrappedafterbreak}{\hbox{\char`\;}}}%
+        \lccode`\~`\:\lowercase{\def~}{\discretionary{\hbox{\char`\:}}{\Wrappedafterbreak}{\hbox{\char`\:}}}%
+        \lccode`\~`\?\lowercase{\def~}{\discretionary{\hbox{\char`\?}}{\Wrappedafterbreak}{\hbox{\char`\?}}}%
+        \lccode`\~`\!\lowercase{\def~}{\discretionary{\hbox{\char`\!}}{\Wrappedafterbreak}{\hbox{\char`\!}}}%
+        \lccode`\~`\/\lowercase{\def~}{\discretionary{\hbox{\char`\/}}{\Wrappedafterbreak}{\hbox{\char`\/}}}%
+        \catcode`\.\active
+        \catcode`\,\active
+        \catcode`\;\active
+        \catcode`\:\active
+        \catcode`\?\active
+        \catcode`\!\active
+        \catcode`\/\active
+        \lccode`\~`\~
+    }
+\makeatother
+
+\let\OriginalVerbatim=\Verbatim
+\makeatletter
+\renewcommand{\Verbatim}[1][1]{%
+    %\parskip\z@skip
+    \sbox\Wrappedcontinuationbox {\Wrappedcontinuationsymbol}%
+    \sbox\Wrappedvisiblespacebox {\FV@SetupFont\Wrappedvisiblespace}%
+    \def\FancyVerbFormatLine ##1{\hsize\linewidth
+        \vtop{\raggedright\hyphenpenalty\z@\exhyphenpenalty\z@
+            \doublehyphendemerits\z@\finalhyphendemerits\z@
+            \strut ##1\strut}%
+    }%
+    % If the linebreak is at a space, the latter will be displayed as visible
+    % space at end of first line, and a continuation symbol starts next line.
+    % Stretch/shrink are however usually zero for typewriter font.
+    \def\FV@Space {%
+        \nobreak\hskip\z@ plus\fontdimen3\font minus\fontdimen4\font
+        \discretionary{\copy\Wrappedvisiblespacebox}{\Wrappedafterbreak}
+        {\kern\fontdimen2\font}%
+    }%
+
+    % Allow breaks at special characters using \PYG... macros.
+    \Wrappedbreaksatspecials
+    % Breaks at punctuation characters . , ; ? ! and / need catcode=\active
+    \OriginalVerbatim[#1,codes*=\Wrappedbreaksatpunct]%
+}
+\makeatother
+
+% Exact colors from NB
+\definecolor{incolor}{HTML}{303F9F}
+\definecolor{outcolor}{HTML}{D84315}
+\definecolor{cellborder}{HTML}{CFCFCF}
+\definecolor{cellbackground}{HTML}{F7F7F7}
+
+% prompt
+\makeatletter
+\newcommand{\boxspacing}{\kern\kvtcb@left@rule\kern\kvtcb@boxsep}
+\makeatother
+\newcommand{\prompt}[4]{
+    {\ttfamily\llap{{\color{#2}[#3]:\hspace{3pt}#4}}\vspace{-\baselineskip}}
+}
+
+
+
+% Prevent overflowing lines due to hard-to-break entities
+\sloppy
+% Setup hyperref package
+\hypersetup{
+  breaklinks=true,  % so long urls are correctly broken across lines
+  colorlinks=true,
+  urlcolor=urlcolor,
+  linkcolor=linkcolor,
+  citecolor=citecolor,
+  }
+% Slightly bigger margins than the latex defaults
+
+
+\subsection*{Importing the Libraries}\label{importing-the-libraries}
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{2}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k+kn}{import} \PY{n+nn}{pandas} \PY{k}{as} \PY{n+nn}{pd}
+\PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+\PY{k+kn}{import} \PY{n+nn}{random} \PY{k}{as} \PY{n+nn}{rd}
+\PY{k+kn}{import} \PY{n+nn}{copy}
+\PY{k+kn}{import} \PY{n+nn}{math}
+
+\PY{k+kn}{import} \PY{n+nn}{functions}
+\PY{k+kn}{import} \PY{n+nn}{Port}
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Importing the Loading and Unloading
+datasets}\label{importing-the-loading-and-unloading-datasets}
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{3}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{loading\PYZus{}plan\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Dataset\PYZus{}2/loading\PYZus{}plan.csv}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\PY{n}{unloading\PYZus{}plan\PYZus{}df} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{read\PYZus{}csv}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Dataset\PYZus{}2/unloading\PYZus{}plan.csv}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+
+\PY{n}{row\PYZus{}lengths\PYZus{}load} \PY{o}{=} \PY{n}{loading\PYZus{}plan\PYZus{}df}\PY{o}{.}\PY{n}{apply}\PY{p}{(}\PY{k}{lambda} \PY{n}{row}\PY{p}{:} \PY{n+nb}{len}\PY{p}{(}\PY{n}{row}\PY{p}{)}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{row\PYZus{}lengths\PYZus{}unload} \PY{o}{=} \PY{n}{unloading\PYZus{}plan\PYZus{}df}\PY{o}{.}\PY{n}{apply}\PY{p}{(}\PY{k}{lambda} \PY{n}{row}\PY{p}{:} \PY{n+nb}{len}\PY{p}{(}\PY{n}{row}\PY{p}{)}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
+
+\PY{n}{row\PYZus{}lengths\PYZus{}load} \PY{o}{=} \PY{n}{row\PYZus{}lengths\PYZus{}load}\PY{o}{.}\PY{n}{tolist}\PY{p}{(}\PY{p}{)}
+\PY{n}{row\PYZus{}lengths\PYZus{}unload} \PY{o}{=} \PY{n}{row\PYZus{}lengths\PYZus{}unload}\PY{o}{.}\PY{n}{tolist}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Making the `Loading Plan' to a linear
+array}\label{making-the-loading-plan-to-a-linear-array}
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{4}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{liner\PYZus{}array\PYZus{}of\PYZus{}loading\PYZus{}plan} \PY{o}{=} \PY{n}{functions}\PY{o}{.}\PY{n}{make\PYZus{}liner\PYZus{}array\PYZus{}of\PYZus{}loading\PYZus{}cont}\PY{p}{(}\PY{n}{loading\PYZus{}plan\PYZus{}df}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{n}{row\PYZus{}lengths\PYZus{}load}\PY{p}{)}\PY{p}{)}
+
+\PY{n}{load} \PY{o}{=} \PY{n}{functions}\PY{o}{.}\PY{n}{create\PYZus{}df\PYZus{}to\PYZus{}2d\PYZus{}array}\PY{p}{(}\PY{n}{loading\PYZus{}plan\PYZus{}df}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{n}{row\PYZus{}lengths\PYZus{}load}\PY{p}{)}\PY{p}{)}
+\PY{n}{unload} \PY{o}{=} \PY{n}{functions}\PY{o}{.}\PY{n}{create\PYZus{}df\PYZus{}to\PYZus{}2d\PYZus{}array}\PY{p}{(}\PY{n}{unloading\PYZus{}plan\PYZus{}df}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{n}{row\PYZus{}lengths\PYZus{}load}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+\section*{Mutation}\label{mutation}
+
+\subsection*{Mutation function for the `Unloading
+Sequences'{[}1D{]}}\label{mutation-function-for-the-unloading-sequences1d}
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{5}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{mutation\PYZus{}1D}\PY{p}{(}\PY{n}{arr}\PY{p}{)}\PY{p}{:}
+\PY{n}{n} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{arr}\PY{p}{)}
+\PY{n}{l} \PY{o}{=} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{r} \PY{o}{=} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{n}{l}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{arr}\PY{p}{[}\PY{n}{l}\PY{p}{]}\PY{p}{,} \PY{n}{arr}\PY{p}{[}\PY{n}{r}\PY{p}{]} \PY{o}{=} \PY{n}{arr}\PY{p}{[}\PY{n}{r}\PY{p}{]}\PY{p}{,} \PY{n}{arr}\PY{p}{[}\PY{n}{l}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Mutation Function for the `Docyard
+Plans'{[}2D{]}}\label{mutation-function-for-the-docyard-plans2d}
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{6}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{mutation\PYZus{}2D}\PY{p}{(}\PY{n}{arr}\PY{p}{)}\PY{p}{:}
+\PY{n}{row} \PY{o}{=} \PY{n}{arr}\PY{p}{[}\PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{arr}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{]}
+\PY{n}{n} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{row}\PY{p}{)}
+\PY{k}{if} \PY{n}{n} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
+    \PY{k}{return} \PY{n}{arr}
+\PY{n}{l} \PY{o}{=} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{r} \PY{o}{=} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{n}{l}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{row}\PY{p}{[}\PY{n}{l}\PY{p}{]}\PY{p}{,} \PY{n}{row}\PY{p}{[}\PY{n}{r}\PY{p}{]} \PY{o}{=} \PY{n}{row}\PY{p}{[}\PY{n}{r}\PY{p}{]}\PY{p}{,} \PY{n}{row}\PY{p}{[}\PY{n}{l}\PY{p}{]}
+\end{Verbatim}
+\end{tcolorbox}
+
+\section*{Crossover}\label{crossover}
+
+\subsection*{Crossover function for `Unloading
+Sequences'{[}1D{]}}\label{crossover-function-for-unloading-sequences1d}
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{7}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{crossover\PYZus{}1D}\PY{p}{(}\PY{n}{p1}\PY{p}{,} \PY{n}{p2}\PY{p}{,} \PY{n}{mutation\PYZus{}prob}\PY{p}{)}\PY{p}{:}
+\PY{n}{parent1} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{deepcopy}\PY{p}{(}\PY{n}{p1}\PY{p}{)}
+\PY{n}{parent2} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{deepcopy}\PY{p}{(}\PY{n}{p2}\PY{p}{)}
+\PY{n}{n} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{parent1}\PY{p}{)}
+\PY{n}{l} \PY{o}{=} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{r} \PY{o}{=} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{n}{l}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}
+
+\PY{n}{child1} \PY{o}{=} \PY{n}{parent1}\PY{p}{[}\PY{p}{:}\PY{n}{l}\PY{p}{]} \PY{o}{+} \PY{n}{parent2}\PY{p}{[}\PY{n}{l}\PY{p}{:}\PY{n}{r} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+} \PY{n}{parent1}\PY{p}{[}\PY{n}{r} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}
+\PY{n}{child2} \PY{o}{=} \PY{n}{parent2}\PY{p}{[}\PY{p}{:}\PY{n}{l}\PY{p}{]} \PY{o}{+} \PY{n}{parent1}\PY{p}{[}\PY{n}{l}\PY{p}{:}\PY{n}{r} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+} \PY{n}{parent2}\PY{p}{[}\PY{n}{r} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}
+
+\PY{n}{need1} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{n}{parent1}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n+nb}{set}\PY{p}{(}\PY{n}{child1}\PY{p}{)}
+\PY{n}{need2} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{n}{parent2}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n+nb}{set}\PY{p}{(}\PY{n}{child2}\PY{p}{)}
+
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+    \PY{k}{if} \PY{n}{child1}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o+ow}{in} \PY{n}{child1}\PY{p}{[}\PY{p}{:}\PY{n}{i}\PY{p}{]}\PY{p}{:}
+        \PY{n}{child1}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{need1}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
+    \PY{k}{if} \PY{n}{child2}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o+ow}{in} \PY{n}{child2}\PY{p}{[}\PY{p}{:}\PY{n}{i}\PY{p}{]}\PY{p}{:}
+        \PY{n}{child2}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{need2}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} do not do mutation all the time}
+\PY{n}{number} \PY{o}{=} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{)}
+\PY{k}{if} \PY{n}{number} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{mutation\PYZus{}prob}\PY{p}{:}
+    \PY{n}{mutation\PYZus{}1D}\PY{p}{(}\PY{n}{child1}\PY{p}{)}
+    \PY{n}{mutation\PYZus{}1D}\PY{p}{(}\PY{n}{child2}\PY{p}{)}
+\PY{k}{return} \PY{n}{child1}\PY{p}{,} \PY{n}{child2}
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Crossover function for `Dockyard
+Plans'{[}2D{]}}\label{crossover-function-for-dockyard-plans2d}
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{8}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{crossover\PYZus{}2D}\PY{p}{(}\PY{n}{p1}\PY{p}{,} \PY{n}{p2}\PY{p}{,} \PY{n}{mutation\PYZus{}prob}\PY{p}{)}\PY{p}{:}
+\PY{n}{parent1} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{deepcopy}\PY{p}{(}\PY{n}{p1}\PY{p}{)}
+\PY{n}{parent2} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{deepcopy}\PY{p}{(}\PY{n}{p2}\PY{p}{)}
+\PY{n}{n} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{parent1}\PY{p}{)}
+\PY{n}{l} \PY{o}{=} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}
+\PY{n}{r} \PY{o}{=} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{n}{l}\PY{p}{,} \PY{n}{n} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{}Swaping the rows from l to r}
+\PY{n}{child1} \PY{o}{=} \PY{n}{parent1}\PY{p}{[}\PY{p}{:}\PY{n}{l}\PY{p}{]} \PY{o}{+} \PY{n}{parent2}\PY{p}{[}\PY{n}{l}\PY{p}{:}\PY{n}{r} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+} \PY{n}{parent1}\PY{p}{[}\PY{n}{r} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}
+\PY{n}{child2} \PY{o}{=} \PY{n}{parent2}\PY{p}{[}\PY{p}{:}\PY{n}{l}\PY{p}{]} \PY{o}{+} \PY{n}{parent1}\PY{p}{[}\PY{n}{l}\PY{p}{:}\PY{n}{r} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+} \PY{n}{parent2}\PY{p}{[}\PY{n}{r} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}
+
+\PY{c+c1}{\PYZsh{}removing the duplicates and fixing it}
+\PY{n}{parent1\PYZus{}linear} \PY{o}{=} \PY{p}{[}\PY{n}{col} \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{parent1} \PY{k}{for} \PY{n}{col} \PY{o+ow}{in} \PY{n}{row}\PY{p}{]}
+\PY{n}{child1\PYZus{}linear} \PY{o}{=} \PY{p}{[}\PY{n}{col} \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{child1} \PY{k}{for} \PY{n}{col} \PY{o+ow}{in} \PY{n}{row}\PY{p}{]}
+\PY{n}{child2\PYZus{}linear} \PY{o}{=} \PY{p}{[}\PY{n}{col} \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{child2} \PY{k}{for} \PY{n}{col} \PY{o+ow}{in} \PY{n}{row}\PY{p}{]}
+
+\PY{n}{need1} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{n}{parent1\PYZus{}linear}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n+nb}{set}\PY{p}{(}\PY{n}{child1\PYZus{}linear}\PY{p}{)}
+\PY{n}{need2} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{n}{parent1\PYZus{}linear}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n+nb}{set}\PY{p}{(}\PY{n}{child2\PYZus{}linear}\PY{p}{)}
+
+\PY{n}{done1} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+\PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{child1}\PY{p}{:}
+    \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
+    \PY{k}{while} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n+nb}{len}\PY{p}{(}\PY{n}{row}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{n}{row}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o+ow}{in} \PY{n}{done1}\PY{p}{:}
+            \PY{k}{if} \PY{n+nb}{len}\PY{p}{(}\PY{n}{need1}\PY{p}{)} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
+                \PY{n}{row}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+                \PY{k}{continue}
+            \PY{k}{else}\PY{p}{:}
+                \PY{n}{row}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{need1}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
+        \PY{k}{else}\PY{p}{:}
+            \PY{n}{done1}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{row}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+        \PY{n}{i} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+\PY{k}{while} \PY{n+nb}{len}\PY{p}{(}\PY{n}{need1}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{:}
+    \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{child1}\PY{p}{:}
+        \PY{k}{if} \PY{n+nb}{len}\PY{p}{(}\PY{n}{row}\PY{p}{)} \PY{o}{\PYZlt{}} \PY{l+m+mi}{6}\PY{p}{:}
+            \PY{n}{row}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{need1}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+            \PY{k}{break}
+\PY{n}{done2} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+\PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{child2}\PY{p}{:}
+    \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
+    \PY{k}{while} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n+nb}{len}\PY{p}{(}\PY{n}{row}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{n}{row}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o+ow}{in} \PY{n}{done2}\PY{p}{:}
+            \PY{k}{if} \PY{n+nb}{len}\PY{p}{(}\PY{n}{need2}\PY{p}{)} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
+                \PY{n}{row}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+                \PY{k}{continue}
+            \PY{k}{else}\PY{p}{:}
+                \PY{n}{row}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{need2}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
+        \PY{k}{else}\PY{p}{:}
+            \PY{n}{done2}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{row}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+        \PY{n}{i} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+\PY{k}{while} \PY{n+nb}{len}\PY{p}{(}\PY{n}{need2}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{:}
+    \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{child2}\PY{p}{:}
+        \PY{k}{if} \PY{n+nb}{len}\PY{p}{(}\PY{n}{row}\PY{p}{)} \PY{o}{\PYZlt{}} \PY{l+m+mi}{6}\PY{p}{:}
+            \PY{n}{row}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{need2}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+            \PY{k}{break}
+
+\PY{c+c1}{\PYZsh{}now sowaping the cols}
+\PY{n}{child1\PYZus{}new} \PY{o}{=} \PY{n}{child1}\PY{p}{[}\PY{p}{:}\PY{n}{l}\PY{p}{]}
+\PY{n}{child2\PYZus{}new} \PY{o}{=} \PY{n}{child2}\PY{p}{[}\PY{p}{:}\PY{n}{l}\PY{p}{]}
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n}{l}\PY{p}{,} \PY{n}{r}\PY{p}{)}\PY{p}{:}
+    \PY{n}{n1}\PY{p}{,} \PY{n}{n2} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{child1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{child2}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+    \PY{n}{l1}\PY{p}{,} \PY{n}{l2} \PY{o}{=} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{n1} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{n2} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+    \PY{n}{r1}\PY{p}{,} \PY{n}{r2} \PY{o}{=} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{n}{l1}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{n1} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{n}{l2}\PY{p}{,} \PY{n+nb}{max}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{n2} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
+    \PY{n}{row1} \PY{o}{=} \PY{n}{child1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{n}{l1}\PY{p}{]} \PY{o}{+} \PY{n}{child2}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l2}\PY{p}{:}\PY{n}{r2} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+} \PY{n}{child1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{r1} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}
+    \PY{n}{row2} \PY{o}{=} \PY{n}{child2}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{n}{l2}\PY{p}{]} \PY{o}{+} \PY{n}{child1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{l1}\PY{p}{:}\PY{n}{r1} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+} \PY{n}{child1}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{n}{r2} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}
+    \PY{n}{child1\PYZus{}new}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{row1}\PY{p}{)}
+    \PY{n}{child2\PYZus{}new}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{row2}\PY{p}{)}
+
+\PY{n}{child1\PYZus{}new} \PY{o}{+}\PY{o}{=} \PY{n}{child1}\PY{p}{[}\PY{n}{r}\PY{p}{:}\PY{p}{]}
+\PY{n}{child2\PYZus{}new} \PY{o}{+}\PY{o}{=} \PY{n}{child2}\PY{p}{[}\PY{n}{r}\PY{p}{:}\PY{p}{]}
+
+\PY{c+c1}{\PYZsh{}removing the duplicates and fixing it}
+\PY{n}{child1\PYZus{}new\PYZus{}linear} \PY{o}{=} \PY{p}{[}\PY{n}{col} \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{child1\PYZus{}new} \PY{k}{for} \PY{n}{col} \PY{o+ow}{in} \PY{n}{row}\PY{p}{]}
+\PY{n}{child2\PYZus{}new\PYZus{}linear} \PY{o}{=} \PY{p}{[}\PY{n}{col} \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{child2\PYZus{}new} \PY{k}{for} \PY{n}{col} \PY{o+ow}{in} \PY{n}{row}\PY{p}{]}
+
+\PY{n}{need3} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{n}{parent1\PYZus{}linear}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n+nb}{set}\PY{p}{(}\PY{n}{child1\PYZus{}new\PYZus{}linear}\PY{p}{)}
+\PY{n}{need4} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{n}{parent1\PYZus{}linear}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n+nb}{set}\PY{p}{(}\PY{n}{child2\PYZus{}new\PYZus{}linear}\PY{p}{)}
+
+\PY{n}{done3} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+\PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{child1\PYZus{}new}\PY{p}{:}
+    \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
+    \PY{k}{while} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n+nb}{len}\PY{p}{(}\PY{n}{row}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{n}{row}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o+ow}{in} \PY{n}{done3}\PY{p}{:}
+            \PY{k}{if} \PY{o+ow}{not} \PY{n}{need3}\PY{p}{:}
+                \PY{n}{row}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+                \PY{k}{continue}
+            \PY{k}{else}\PY{p}{:}
+                \PY{n}{row}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{need3}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
+        \PY{k}{else}\PY{p}{:}
+            \PY{n}{done3}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{row}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+        \PY{n}{i} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+\PY{k}{while} \PY{n+nb}{len}\PY{p}{(}\PY{n}{need3}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{:}
+    \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{child1\PYZus{}new}\PY{p}{:}
+        \PY{k}{if} \PY{n+nb}{len}\PY{p}{(}\PY{n}{row}\PY{p}{)} \PY{o}{\PYZlt{}} \PY{l+m+mi}{6}\PY{p}{:}
+            \PY{n}{row}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{need3}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+            \PY{k}{break}
+
+\PY{n}{done4} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+\PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{child2\PYZus{}new}\PY{p}{:}
+    \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
+    \PY{k}{while} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{n+nb}{len}\PY{p}{(}\PY{n}{row}\PY{p}{)}\PY{p}{:}
+        \PY{k}{if} \PY{n}{row}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o+ow}{in} \PY{n}{done4}\PY{p}{:}
+            \PY{k}{if} \PY{o+ow}{not} \PY{n}{need4}\PY{p}{:}
+                \PY{n}{row}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+                \PY{k}{continue}
+            \PY{k}{else}\PY{p}{:}
+                \PY{n}{row}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{need4}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
+        \PY{k}{else}\PY{p}{:}
+            \PY{n}{done4}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{row}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{)}
+        \PY{n}{i} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+\PY{k}{while} \PY{n+nb}{len}\PY{p}{(}\PY{n}{need4}\PY{p}{)} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{:}
+    \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{child2\PYZus{}new}\PY{p}{:}
+        \PY{k}{if} \PY{n+nb}{len}\PY{p}{(}\PY{n}{row}\PY{p}{)} \PY{o}{\PYZlt{}} \PY{l+m+mi}{6}\PY{p}{:}
+            \PY{n}{row}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{need4}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}\PY{p}{)}
+            \PY{k}{break}
+
+\PY{c+c1}{\PYZsh{}mutation}
+\PY{n}{num} \PY{o}{=} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{)}
+\PY{k}{if} \PY{n}{num} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n}{mutation\PYZus{}prob}\PY{p}{:}
+    \PY{n}{mutation\PYZus{}2D}\PY{p}{(}\PY{n}{child1\PYZus{}new}\PY{p}{)}
+    \PY{n}{mutation\PYZus{}2D}\PY{p}{(}\PY{n}{child2\PYZus{}new}\PY{p}{)}
+\PY{k}{return} \PY{n}{child1\PYZus{}new}\PY{p}{,} \PY{n}{child2\PYZus{}new}
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{This function is for checking the validity of 2D
+Crossover}\label{this-function-is-for-checking-the-validity-of-2d-crossover}
+
+Using this function after every 2D crossover
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{9}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{def} \PY{n+nf}{check\PYZus{}the\PYZus{}crossover}\PY{p}{(}\PY{n}{parent1}\PY{p}{,} \PY{n}{parent2}\PY{p}{,} \PY{n}{child1}\PY{p}{,} \PY{n}{child2}\PY{p}{)}\PY{p}{:}
+\PY{n}{parent\PYZus{}set} \PY{o}{=} \PY{p}{[}\PY{n}{i} \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{parent2} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{row}\PY{p}{]}
+\PY{n}{child1\PYZus{}set} \PY{o}{=} \PY{p}{[}\PY{n}{i} \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{child1} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{row}\PY{p}{]}
+\PY{n}{child2\PYZus{}set} \PY{o}{=} \PY{p}{[}\PY{n}{i} \PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{child2} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{row}\PY{p}{]}
+\PY{n}{parent\PYZus{}set}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{p}{)}
+\PY{n}{child1\PYZus{}set}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{p}{)}
+\PY{n}{child2\PYZus{}set}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{p}{)}
+\PY{k}{if} \PY{n}{child1\PYZus{}set} \PY{o}{==} \PY{n}{child2\PYZus{}set} \PY{o+ow}{and} \PY{n}{child1\PYZus{}set} \PY{o}{==} \PY{n}{parent\PYZus{}set}\PY{p}{:}
+    \PY{k}{return} \PY{k+kc}{True}
+\PY{k}{else}\PY{p}{:}
+    \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Parent\PYZhy{}child didn}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{t match}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+    \PY{k}{return} \PY{k+kc}{False}
+\end{Verbatim}
+\end{tcolorbox}
+
+\section*{Making the Dockyard Arrangement of
+containers}\label{making-the-dockyard-arrangement-of-containers}
+
+First randomly create 200 different arrangement of dockyard container
+plans.
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{10}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} determining the number of dockyard stacks needed}
+\PY{n}{rows} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{load}\PY{p}{)}
+\PY{n}{h} \PY{o}{=} \PY{l+m+mi}{0}
+\PY{k}{for} \PY{n}{row} \PY{o+ow}{in} \PY{n}{load}\PY{p}{:}
+\PY{n}{h} \PY{o}{=} \PY{n+nb}{max}\PY{p}{(}\PY{n}{h}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{row}\PY{p}{)}\PY{p}{)}
+\PY{n}{no\PYZus{}of\PYZus{}dock\PYZus{}stacks} \PY{o}{=} \PY{n+nb}{int}\PY{p}{(}\PY{p}{(}\PY{n}{rows} \PY{o}{*} \PY{n}{h}\PY{p}{)} \PY{o}{/} \PY{l+m+mi}{6}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{no\PYZus{}of\PYZus{}dock\PYZus{}stacks}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{Verbatim}[commandchars=\\\{\}]
+41
+\end{Verbatim}
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{11}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{dockyard\PYZus{}plans} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{200}\PY{p}{)}\PY{p}{:}
+\PY{n}{dockyard\PYZus{}plans}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{functions}\PY{o}{.}\PY{n}{create\PYZus{}dock\PYZus{}stacks\PYZus{}plan}\PY{p}{(}\PY{n}{liner\PYZus{}array\PYZus{}of\PYZus{}loading\PYZus{}plan}\PY{p}{,} \PY{n}{no\PYZus{}of\PYZus{}dock\PYZus{}stacks}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+\section*{Making the unLoading
+sequences}\label{making-the-unloading-sequences}
+
+Then randomly create 200 different unloading sequences
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{12}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{no\PYZus{}of\PYZus{}ship\PYZus{}stack} \PY{o}{=} \PY{n+nb}{len}\PY{p}{(}\PY{n}{unload}\PY{p}{)}
+\PY{n}{unloading\PYZus{}seqs} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{200}\PY{p}{)}\PY{p}{:}
+\PY{n}{unloading\PYZus{}seqs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{rd}\PY{o}{.}\PY{n}{sample}\PY{p}{(}\PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{no\PYZus{}of\PYZus{}ship\PYZus{}stack} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{no\PYZus{}of\PYZus{}ship\PYZus{}stack}\PY{p}{)}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{unloading\PYZus{}seqs}\PY{p}{[}\PY{l+m+mi}{10}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+\section*{Setting the weights for single cycle, dual cycle and
+rehandle.}\label{setting-the-weights-for-single-cycle-dual-cycle-and-rehandle.}
+
+It is the same variable that is mentioned in the paper. All the values
+are in second.
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{13}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{alpha} \PY{o}{=} \PY{l+m+mi}{105}
+\PY{n}{beta} \PY{o}{=} \PY{l+m+mi}{170}
+\PY{n}{gamma} \PY{o}{=} \PY{l+m+mi}{90}
+\end{Verbatim}
+\end{tcolorbox}
+
+\section*{Creating the Parent-Child
+Class}\label{creating-the-parent-child-class}
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{14}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{class} \PY{n+nc}{Parents}\PY{p}{:}
+\PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{unloading\PYZus{}seqs} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{dockyard\PYZus{}plans} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{costs} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{roulette\PYZus{}wheel} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{*} \PY{l+m+mi}{200}
+    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{end\PYZus{}of\PYZus{}roulette\PYZus{}wheel} \PY{o}{=} \PY{l+m+mi}{0}
+
+\PY{k}{def} \PY{n+nf}{create\PYZus{}the\PYZus{}roulette\PYZus{}wheel}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+    \PY{n}{total\PYZus{}cost} \PY{o}{=} \PY{n+nb}{sum}\PY{p}{(}\PY{p}{[}\PY{n}{i}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{costs}\PY{p}{]}\PY{p}{)}
+    \PY{n}{inversed\PYZus{}cost} \PY{o}{=} \PY{p}{[}\PY{n+nb}{int}\PY{p}{(}\PY{p}{(}\PY{n}{total\PYZus{}cost} \PY{o}{/} \PY{n}{i}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)} \PY{o}{*} \PY{l+m+mi}{1000}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{costs}\PY{p}{]}
+
+    \PY{c+c1}{\PYZsh{} roulette\PYZus{}wheel is nothing but the cumulative sum}
+    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{roulette\PYZus{}wheel}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{=} \PY{n}{inversed\PYZus{}cost}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+    \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{1}
+    \PY{k}{while} \PY{n}{i} \PY{o}{\PYZlt{}} \PY{l+m+mi}{200}\PY{p}{:}
+        \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{roulette\PYZus{}wheel}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{roulette\PYZus{}wheel}\PY{p}{[}\PY{n}{i} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+} \PY{n}{inversed\PYZus{}cost}\PY{p}{[}\PY{n}{i}\PY{p}{]}
+        \PY{n}{i} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{end\PYZus{}of\PYZus{}roulette\PYZus{}wheel} \PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{roulette\PYZus{}wheel}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+
+\PY{k}{class} \PY{n+nc}{Childs}\PY{p}{:}
+\PY{k}{def} \PY{n+nf+fm}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{parents}\PY{p}{)}\PY{p}{:}
+    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{parents} \PY{o}{=} \PY{n}{parents}
+
+    \PY{c+c1}{\PYZsh{}choosing the elite class}
+    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{unloading\PYZus{}seqs} \PY{o}{=} \PY{n}{parents}\PY{o}{.}\PY{n}{unloading\PYZus{}seqs}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{40}\PY{p}{]}
+    \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{dockyard\PYZus{}plans} \PY{o}{=} \PY{n}{parents}\PY{o}{.}\PY{n}{dockyard\PYZus{}plans}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{40}\PY{p}{]}
+
+\PY{k}{def} \PY{n+nf}{roll\PYZus{}the\PYZus{}wheel}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+    \PY{n}{l} \PY{o}{=} \PY{l+m+mi}{0}
+    \PY{n}{r} \PY{o}{=} \PY{l+m+mi}{0}
+    \PY{k}{while} \PY{n}{l} \PY{o}{==} \PY{n}{r}\PY{p}{:}
+        \PY{n}{n1} \PY{o}{=} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{parents}\PY{o}{.}\PY{n}{end\PYZus{}of\PYZus{}roulette\PYZus{}wheel}\PY{p}{)}
+        \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{parents}\PY{o}{.}\PY{n}{roulette\PYZus{}wheel}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+            \PY{k}{if} \PY{n}{n1} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{parents}\PY{o}{.}\PY{n}{roulette\PYZus{}wheel}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{:}
+                \PY{n}{l} \PY{o}{=} \PY{n}{i}
+                \PY{k}{break}
+        \PY{n}{n2} \PY{o}{=} \PY{n}{rd}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{parents}\PY{o}{.}\PY{n}{end\PYZus{}of\PYZus{}roulette\PYZus{}wheel}\PY{p}{)}
+        \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{parents}\PY{o}{.}\PY{n}{roulette\PYZus{}wheel}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+            \PY{k}{if} \PY{n}{n2} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{parents}\PY{o}{.}\PY{n}{roulette\PYZus{}wheel}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{:}
+                \PY{n}{r} \PY{o}{=} \PY{n}{i}
+    \PY{k}{return} \PY{n}{l}\PY{p}{,} \PY{n}{r}
+\end{Verbatim}
+\end{tcolorbox}
+
+\section*{Genetic Algorithm}\label{genetic-algorithm}
+
+\subsection*{Creating the First
+Generation}\label{creating-the-first-generation}
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{15}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{n}{parents} \PY{o}{=} \PY{n}{Parents}\PY{p}{(}\PY{p}{)}
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{200}\PY{p}{)}\PY{p}{:}
+\PY{n}{dataset} \PY{o}{=} \PY{n}{Port}\PY{o}{.}\PY{n}{port}\PY{p}{(}\PY{n}{load}\PY{p}{,} \PY{n}{unload}\PY{p}{,} \PY{n}{dockyard\PYZus{}plans}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{unloading\PYZus{}seqs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}
+\PY{n}{single\PYZus{}cycle}\PY{p}{,} \PY{n}{double\PYZus{}cycle}\PY{p}{,} \PY{n}{rehandles} \PY{o}{=} \PY{n}{Port}\PY{o}{.}\PY{n}{calculate\PYZus{}total\PYZus{}cost}\PY{p}{(}\PY{n}{dataset}\PY{p}{)}
+
+\PY{n}{time} \PY{o}{=} \PY{n}{alpha} \PY{o}{*} \PY{n}{single\PYZus{}cycle} \PY{o}{+} \PY{n}{beta} \PY{o}{*} \PY{n}{double\PYZus{}cycle} \PY{o}{+} \PY{n}{gamma} \PY{o}{*} \PY{n}{rehandles}
+\PY{n}{parents}\PY{o}{.}\PY{n}{costs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{p}{[}\PY{n}{time}\PY{p}{,} \PY{n}{i}\PY{p}{]}\PY{p}{)}
+\PY{n}{parents}\PY{o}{.}\PY{n}{costs}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{parents}\PY{o}{.}\PY{n}{costs}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{10}\PY{p}{]}\PY{p}{)}
+
+\PY{c+c1}{\PYZsh{} appending the parents}
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{200}\PY{p}{)}\PY{p}{:}
+\PY{n}{parents}\PY{o}{.}\PY{n}{unloading\PYZus{}seqs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{unloading\PYZus{}seqs}\PY{p}{[}\PY{n}{parents}\PY{o}{.}\PY{n}{costs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+\PY{n}{parents}\PY{o}{.}\PY{n}{dockyard\PYZus{}plans}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{dockyard\PYZus{}plans}\PY{p}{[}\PY{n}{parents}\PY{o}{.}\PY{n}{costs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{16}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} creating the roulette wheel}
+\PY{n}{parents}\PY{o}{.}\PY{n}{create\PYZus{}the\PYZus{}roulette\PYZus{}wheel}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+\end{tcolorbox}
+
+\subsection*{Repeating the whole process in a loop according to
+GA}\label{repeating-the-whole-process-in-a-loop-according-to-ga}
+
+\begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
+\prompt{In}{incolor}{17}{\boxspacing}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} setting the mutation probability}
+\PY{n}{mutation\PYZus{}prob} \PY{o}{=} \PY{l+m+mi}{40}
+\PY{n}{iteration} \PY{o}{=} \PY{l+m+mi}{0}
+\PY{k}{while} \PY{p}{(}\PY{n}{iteration} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mi}{2000}\PY{p}{)}\PY{p}{:}
+\PY{c+c1}{\PYZsh{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{} Creating the next generation\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{n}{childs} \PY{o}{=} \PY{n}{Childs}\PY{p}{(}\PY{n}{parents}\PY{p}{)}
+\PY{c+c1}{\PYZsh{} now creating the left 80\PYZpc{} of chromosomes of the new generation}
+\PY{n}{flag} \PY{o}{=} \PY{k+kc}{False}
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{80}\PY{p}{)}\PY{p}{:}
+    \PY{n}{l}\PY{p}{,} \PY{n}{r} \PY{o}{=} \PY{n}{childs}\PY{o}{.}\PY{n}{roll\PYZus{}the\PYZus{}wheel}\PY{p}{(}\PY{p}{)}
+
+    \PY{c+c1}{\PYZsh{} for the unloading sequences}
+    \PY{n}{parent1\PYZus{}unloading\PYZus{}seqs} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{deepcopy}\PY{p}{(}\PY{n}{parents}\PY{o}{.}\PY{n}{unloading\PYZus{}seqs}\PY{p}{[}\PY{n}{l}\PY{p}{]}\PY{p}{)}
+    \PY{n}{parent2\PYZus{}unloading\PYZus{}seqs} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{deepcopy}\PY{p}{(}\PY{n}{parents}\PY{o}{.}\PY{n}{unloading\PYZus{}seqs}\PY{p}{[}\PY{n}{r}\PY{p}{]}\PY{p}{)}
+    \PY{n}{child1\PYZus{}unloading\PYZus{}seqs}\PY{p}{,} \PY{n}{child2\PYZus{}unloading\PYZus{}seqs} \PY{o}{=} \PY{n}{crossover\PYZus{}1D}\PY{p}{(}\PY{n}{parent1\PYZus{}unloading\PYZus{}seqs}\PY{p}{,} \PY{n}{parent2\PYZus{}unloading\PYZus{}seqs}\PY{p}{,} \PY{n}{mutation\PYZus{}prob}\PY{p}{)}
+    \PY{c+c1}{\PYZsh{} now append the childs to the main child class}
+    \PY{n}{childs}\PY{o}{.}\PY{n}{unloading\PYZus{}seqs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{child1\PYZus{}unloading\PYZus{}seqs}\PY{p}{)}
+    \PY{n}{childs}\PY{o}{.}\PY{n}{unloading\PYZus{}seqs}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{child2\PYZus{}unloading\PYZus{}seqs}\PY{p}{)}
+
+    \PY{c+c1}{\PYZsh{} for dockyard plans}
+    \PY{n}{parent1\PYZus{}dockyard\PYZus{}plans} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{deepcopy}\PY{p}{(}\PY{n}{parents}\PY{o}{.}\PY{n}{dockyard\PYZus{}plans}\PY{p}{[}\PY{n}{l}\PY{p}{]}\PY{p}{)}
+    \PY{n}{parent2\PYZus{}dockyard\PYZus{}plans} \PY{o}{=} \PY{n}{copy}\PY{o}{.}\PY{n}{deepcopy}\PY{p}{(}\PY{n}{parents}\PY{o}{.}\PY{n}{dockyard\PYZus{}plans}\PY{p}{[}\PY{n}{r}\PY{p}{]}\PY{p}{)}
+    \PY{n}{child1\PYZus{}dockyard\PYZus{}plans}\PY{p}{,} \PY{n}{child2\PYZus{}dockyard\PYZus{}plans} \PY{o}{=} \PY{n}{crossover\PYZus{}2D}\PY{p}{(}\PY{n}{parent1\PYZus{}dockyard\PYZus{}plans}\PY{p}{,} \PY{n}{parent2\PYZus{}dockyard\PYZus{}plans}\PY{p}{,} \PY{n}{mutation\PYZus{}prob}\PY{p}{)}
+    \PY{c+c1}{\PYZsh{} check the crossover validiy}
+    \PY{n}{flag} \PY{o}{=} \PY{n}{check\PYZus{}the\PYZus{}crossover}\PY{p}{(}\PY{n}{parent1\PYZus{}dockyard\PYZus{}plans}\PY{p}{,} \PY{n}{parent2\PYZus{}dockyard\PYZus{}plans}\PY{p}{,} \PY{n}{child1\PYZus{}dockyard\PYZus{}plans}\PY{p}{,} \PY{n}{child2\PYZus{}dockyard\PYZus{}plans}\PY{p}{)}
+    \PY{k}{if} \PY{n}{flag} \PY{o}{==} \PY{k+kc}{False}\PY{p}{:}
+        \PY{k}{break}
+    \PY{c+c1}{\PYZsh{} now appending the childs to the main child class}
+    \PY{n}{childs}\PY{o}{.}\PY{n}{dockyard\PYZus{}plans}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{child1\PYZus{}dockyard\PYZus{}plans}\PY{p}{)}
+    \PY{n}{childs}\PY{o}{.}\PY{n}{dockyard\PYZus{}plans}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{child2\PYZus{}dockyard\PYZus{}plans}\PY{p}{)}
+
+\PY{k}{if} \PY{n}{flag} \PY{o}{==} \PY{k+kc}{False}\PY{p}{:}
+    \PY{k}{break}
+
+\PY{c+c1}{\PYZsh{} \PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}making this generation parents for next generation\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}
+\PY{c+c1}{\PYZsh{} first determining the costs of this generation, then appending that generation to the parent class according to the cost in asceding order}
+
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{200}\PY{p}{)}\PY{p}{:}
+    
+    \PY{n}{dataset} \PY{o}{=} \PY{n}{Port}\PY{o}{.}\PY{n}{port}\PY{p}{(}\PY{n}{load}\PY{p}{,} \PY{n}{unload}\PY{p}{,} \PY{n}{childs}\PY{o}{.}\PY{n}{dockyard\PYZus{}plans}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{n}{childs}\PY{o}{.}\PY{n}{unloading\PYZus{}seqs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}
+    \PY{c+c1}{\PYZsh{} Warning!!! dockyard\PYZus{}plans array will be vanished after the following operation}
+    \PY{n}{single\PYZus{}cycle}\PY{p}{,} \PY{n}{double\PYZus{}cycle}\PY{p}{,} \PY{n}{rehandles} \PY{o}{=} \PY{n}{Port}\PY{o}{.}\PY{n}{calculate\PYZus{}total\PYZus{}cost}\PY{p}{(}\PY{n}{dataset}\PY{p}{)}
+    \PY{k}{if} \PY{n}{i} \PY{o}{==} \PY{l+m+mi}{0} \PY{o+ow}{and} \PY{n}{iteration} \PY{o}{\PYZpc{}} \PY{l+m+mi}{10} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}single=}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{single\PYZus{}cycle}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{double=}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{double\PYZus{}cycle}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{rehandle=}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{rehandles}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{iteration}\PY{p}{)}
+    \PY{n}{time} \PY{o}{=} \PY{n}{alpha} \PY{o}{*} \PY{n}{single\PYZus{}cycle} \PY{o}{+} \PY{n}{beta} \PY{o}{*} \PY{n}{double\PYZus{}cycle} \PY{o}{+} \PY{n}{gamma} \PY{o}{*} \PY{n}{rehandles}
+    \PY{n}{parents}\PY{o}{.}\PY{n}{costs}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{p}{[}\PY{n}{time}\PY{p}{,} \PY{n}{i}\PY{p}{]}
+\PY{c+c1}{\PYZsh{}checking fitness}
+\PY{n}{parents}\PY{o}{.}\PY{n}{costs}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{p}{)}
+\PY{n+nb}{print}\PY{p}{(}\PY{n}{parents}\PY{o}{.}\PY{n}{costs}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{10}\PY{p}{]}\PY{p}{)}
+
+\PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{200}\PY{p}{)}\PY{p}{:}
+    \PY{n}{parents}\PY{o}{.}\PY{n}{unloading\PYZus{}seqs}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{childs}\PY{o}{.}\PY{n}{unloading\PYZus{}seqs}\PY{p}{[}\PY{n}{parents}\PY{o}{.}\PY{n}{costs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}
+    \PY{n}{parents}\PY{o}{.}\PY{n}{dockyard\PYZus{}plans}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{childs}\PY{o}{.}\PY{n}{dockyard\PYZus{}plans}\PY{p}{[}\PY{n}{parents}\PY{o}{.}\PY{n}{costs}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{]}
+\PY{c+c1}{\PYZsh{} creating the roulette wheel}
+\PY{n}{parents}\PY{o}{.}\PY{n}{create\PYZus{}the\PYZus{}roulette\PYZus{}wheel}\PY{p}{(}\PY{p}{)}
+
+\PY{n}{iteration} \PY{o}{+}\PY{o}{=} \PY{l+m+mi}{1}
+\end{Verbatim}
+\end{tcolorbox}
+
+
+
+

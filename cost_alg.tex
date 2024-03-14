@@ -1,0 +1,86 @@
+\SetKwFunction{unloadFirstStack}{unload\_first\_stack}
+\SetKwProg{fn}{Function}{:}{}
+\SetKwFunction{loading}{loading\_operation}
+\SetKwFunction{calRehandles}{calculate\_rehandles}
+
+% \begin{tcolorbox}
+\begin{algorithm}[h!tbp]
+    \caption{Cost function}
+    \KwIn{Loading plan, unloading plan, dockyard container arrangement, maximum dockyard container stack height}
+    \KwOut{No. of single cycles, no. of double cycles, no. of dockyard rehandles}
+
+    \fn{\unloadFirstStack{unloading plan, unloading sequence}} {
+        \For{container $\in$ the dockyard stack of unloadingSequence} {
+            \If{the container will not stay on the vessel} {
+                unload the container\\
+                no\_of\_single\_cycles += 1
+            }
+        }
+    }
+
+    \fn{\calRehandles{target container}} {
+        Let, no\_of\_rehandles $\leftarrow 0$\\
+        Let, found\_the\_container $\leftarrow false$\\
+        \For{$i$ $\in$ stacks of dockyard}{
+            \For{$j$ $\in$ containers of current stack} {
+                \If{$j=$ target container}{
+                    found\_the\_container $\leftarrow true$\\
+                    \While{until containers are shifted from the top of the target container one by one}{
+                        no\_of\_rehandles $+= 1$\\
+                        Shift the container nearest lowest stack
+                    }
+                    \Return{no\_of\_rehandles}
+                }
+            }
+        }
+        \If{found\_the\_container $= false$}{
+            Warning! container not found
+        }
+        \Return{0}
+    }
+    
+    \fn{\loading{unloading plan, loading plan, unloading sequence}} {
+        \If{the current loading stack is empty} {
+            \If{the current unloading stack is empty} {
+                go to the next loading stack
+            }
+            \Else{
+                \Return{false, 0}
+            }
+        }
+        load the current container from dockyard\\
+        \Return{true, \calRehandles{current container to be loaded at dockyard}}
+    }
+    Let, no\_of\_single\_cycles $\leftarrow 0$\\
+    Let, no\_of\_double\_cycles $\leftarrow 0$\\
+    Let, no\_of\_rehandles $\leftarrow 0$\\
+    \unloadFirstStack{unloading plan, unloading sequence}\\
+\end{algorithm}
+% \end{tcolorbox}
+
+% \begin{tcolorbox}
+\begin{algorithm}[h!tbp]
+    \caption{Cost function (continued)}
+    \setcounter{AlgoLine}{31}
+
+    \While{until all the stacks are unloaded from ship}{
+        \For{container $\in$ current stack}{
+            \If{the container will not stay on the vessel} {
+                unload the container\\
+                \If{there is any container to load \textbf{and} any stack of the ship is free for loading} {
+                    flag, rehandles $\leftarrow$ \loading{unloadig plan, loading plan, unloading sequence}\\
+                    no\_of\_rehandles += rehandles\\
+                    no\_of\_dual\_cycles += 1
+                }
+            }
+        }
+    }
+
+    \While{complete loading the remaining stacks}{
+        flag, rehandles $\leftarrow$ \loading{unloadig plan, loading plan, unloading sequence}\\
+        no\_of\_rehandles += rehandles\\
+        no\_of\_single\_cycles += 1
+    }
+    
+\end{algorithm}
+% \end{tcolorbox}
